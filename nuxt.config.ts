@@ -3,7 +3,11 @@ export default defineNuxtConfig({
 	compatibilityDate: "2024-11-01",
 	devtools: { enabled: true },
 
-	modules: ["@pinia/nuxt", "@nuxtjs/color-mode", "@nuxt/content"],
+	modules: ["@pinia/nuxt", "@nuxtjs/color-mode", "@nuxt/content", 'motion-v/nuxt'],
+
+	plugins: [
+		{ src: '@/plugins/vue-scrollto.client.ts', mode: 'client' }
+	],
 
 	colorMode: {
 		classSuffix: "",
@@ -87,5 +91,8 @@ export default defineNuxtConfig({
 				},
 			},
 		},
+		plugins: [
+			require('vite-svg-loader')()
+		],
 	},
 });
