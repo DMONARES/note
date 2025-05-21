@@ -57,11 +57,12 @@ export default defineNuxtConfig({
 
 	// env, пожалуйста, создайте в корне проекта env c именем NUXT_PUBLIC_API_HOST, если это требуется ⬇️
 
-	// runtimeConfig: {
-	// 	public: {
-	// 		api: process.env.NUXT_PUBLIC_API_HOST,
-	// 	}
-	// },
+	runtimeConfig: {
+		public: {
+			api: process.env.NUXT_PUBLIC_API_HOST,
+			socketUrl: process.env.NUXT_PUBLIC_SOCKET_URL || 'http://localhost:3001'
+		}
+	},
 
 	// если вам нужно проксировать получение данных с элемента ( или любые другие ) - раскоментируйте код ниже и добавьте данные в env файл с ключом process.env.NUXT_PUBLIC_ELEMENT_HOST ⬇️
 

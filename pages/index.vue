@@ -1,16 +1,26 @@
 <script setup>
-	useSeoMeta({
-		title      : 'NUXT-TEMPLATE',
-		description: 'NUXT-TEMPLATE - description',
-		keywords   : 'NUXT-TEMPLATE - keywords',
-	});
+import { onMounted, onBeforeUnmount } from "vue";
+const { $socket } = useNuxtApp();
+
+function onMessage(data) {
+  console.log("Получено от сервера:", data);
+}
+
+onMounted(() => {
+  if ($socket) {
+    $socket.on("message", onMessage);
+    // Отправка сообщения при монтировании компонента
+    $socket.emit("client-message", { text: "йцу" });
+  }
+});
+
+onBeforeUnmount(() => {
+  if ($socket) {
+    $socket.off("message", onMessage);
+  }
+});
 </script>
 
 <template>
-	<div>
-	</div>
+  <div>Слушаю сообщения от сервера...</div>
 </template>
-
-<style lang='scss'>
-
-</style>
