@@ -22,5 +22,5 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div>Zdarova zaebal</div>
+  <div>Wassap my boy</div>
 </template>
