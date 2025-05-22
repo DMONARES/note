@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+	"format": "prettier --write ."
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^2.0.12",
@@ -38,6 +39,7 @@
     "yup": "^1.6.1"
   },
   "devDependencies": {
+    "prettier": "^3.5.3",
     "typescript": "^5.7.3",
     "vite-svg-loader": "^5.1.0"
   }
