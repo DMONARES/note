@@ -2,7 +2,7 @@
 	<div class="container">
 		<header class="header">
 			<nuxt-link to="/" class="header__logo">
-				Logo
+				<IconsLogo />
 			</nuxt-link>
 		</header>
 	</div>
